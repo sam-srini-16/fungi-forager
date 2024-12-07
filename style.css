@@ -1,0 +1,694 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Offside&display=swap');
+@import url("https://use.typekit.net/bth2ctt.css");
+
+body {
+  margin: 0;
+  background-color: #F1EBEB;
+  color: #593C1A;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --font1: "source-serif-pro", serif;
+  --font2: "Offside", sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+}
+
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-family: var(--font2);
+  font-size: 20px;
+}
+
+.char {
+  transform: translateY(70px);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Landing */
+
+#landing {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 20vw;
+}
+
+#content {
+  position: relative;
+  width: 100%;
+  top: 20vw;
+}
+
+#fungi-title {
+  font-size: clamp(2rem, 4vw, 4rem);
+  left: 50%;
+  transform: translateX(-44%);
+  text-align: center;
+  font-family: var(--font1);
+  font-weight: 500;
+  font-style: bold;
+  position: relative;
+  top: -5vw;
+  left: 43vw;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  line-height: 5.5rem;
+}
+
+#forager-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-17%);
+  margin-top: clamp(1rem, 4vw, 4rem);
+  top: -9vw;
+  display: flex;
+  align-items: baseline;
+  margin-top: -6vw;
+}
+
+#forager-f {
+  font-family: var(--font1);
+  font-size: 14vw;
+  font-weight: 500;
+  font-style: italic;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+#forager-orager {
+  font-family: var(--font1);
+  font-size: 10vw;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+#bg_forest {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#bg_forest svg {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
+/* Caution */
+
+#caution {
+  margin: 0;
+}
+
+.caution-container {
+  text-align: center;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+#caution-title {
+  font-family: var(--font2);
+  font-size: 2vw;
+  margin-bottom: 20px;
+}
+
+.caution-text {
+  font-family: var(--font2);
+  font-size: 1.2vw;
+  line-height: 4vh;
+  text-align: center;
+  max-width: 50vw;
+}
+
+.scattered-mushrooms {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mushroom-image {
+  position: absolute;
+}
+
+.mushroom-image img{
+  width: 280px;
+  height: auto;
+}
+
+
+#mushroom1 { 
+  left: 3%; 
+  top: 40%;
+  transform: translateY(100vh);
+  opacity: 0;
+}
+#mushroom2 { 
+  left: 77%; 
+  top: 18%;
+  transform: translateY(100vh);
+  opacity: 0;
+ }
+
+#mushroom3 { 
+  left: 2%;
+   top: 35%;
+   transform: translateY(100vh);
+   opacity: 0;
+ }
+
+#mushroom4 { 
+  left: 78%; 
+  top: 55%;
+  transform: translateY(100vh);
+  opacity: 0;
+}
+
+#mushroom5 { 
+  left: 78%; 
+  top: 30%;
+  transform: translateY(100vh);
+  opacity: 0;
+}
+
+#mushroom6 { 
+  left: 5%; 
+  top: 50%;
+  transform: translateY(100vh);
+  opacity: 0;
+}
+
+#edibility-calculator-content {
+  text-align: center;
+  line-height: 40vh;
+}
+
+#whole-dataset-content {
+  text-align: center;
+  line-height: 40vh;
+}
+
+.scroll-arrow {
+  margin-top: -260px;
+  font-size: 24px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}
+
+.scroll-arrow-1 {
+  margin-top: -260px;
+  font-size: 24px;
+  animation: bounce 2s infinite;  
+}
+
+
+#mushroom-edibility-title {
+  font-size: 15vw;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline-block;
+  width: fit-content;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+#whole-dataset-title {
+  font-size: 15vw;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline-block;
+  width: fit-content;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+
+#calculate-btn {
+  background-color: #F1EBEB; 
+  border: 1px solid #593C1A; 
+  color: #593C1A; 
+  padding: 10px 20px; 
+  border-radius: 8px;
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 1vw; 
+  margin: 4px 2px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  font-family: var(--font2);
+}
+
+#calculate-btn:hover {
+  background-color: #593C1A; 
+  color: #F1EBEB; 
+  font-family: var(--font2);
+}
+
+#probability-form {
+
+font-family: var(--font2);
+font-size: 1.4vw;
+line-height: 5vh;
+
+}
+
+#probability {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#form-instructions {
+  font-size: 0.5vw;
+  margin-bottom: 5vh;
+  margin-top: -20vh;
+}
+
+#probablity-form {
+  flex: 1;
+  max-width: 70%;
+  margin-top: -10vh;
+}
+
+#result-div {
+  flex: 1;
+  max-width: 30%;
+  margin-left: 10vw;
+  text-align: center;
+  font-size: 1.2vw;
+  padding: 14vw 5vw;
+  min-height: 300px;
+  position: relative;
+  border: 0px solid #593C1A;
+  transition: border-width 0.5s ease;
+  margin-top: -10vh;
+}
+
+#result-div.active {
+  background-color: #c3823715;
+  border-radius: 20px;
+}
+
+#probability-result {
+
+  font-size: 4vw;
+  font-weight: 900;
+  opacity: 0;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#visualization-instructions {
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
+}
+
+#visualization-section {
+  margin-top: -20vh;
+  min-height: 210vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1EBEB;
+  height: 90vh;
+}
+
+#visualization-select {
+  padding-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+#visualization-select label {
+  color: #593C1A;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font2);
+  margin-right: 0.5rem;
+}
+
+#visualization-select select {
+  padding: 0.8rem;
+  width: 300px;
+  border-radius: 6px;
+  border: 0px solid #593c1a00;
+  background-color: #593c1a25;
+  color: #593C1A;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font2);
+}
+
+#visualization-select select:hover {
+  background-color: #593C1A;
+  color: #F1EBEB;
+  transform: scale(1.05);
+}
+
+
+
+#spacer-2 {
+  color: #2c1c0a;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#spacer-2 img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+}
+
+a {
+  color: #4a4a4a;
+  text-decoration: none;
+  font-size: 1.2rem;
+  position: relative;
+  font-family: var(--font2);
+  z-index: 1000;
+}
+
+a:hover {
+  scale: 1.1;
+  color: #9b3333;
+}
+
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Create custom radio button style */
+.radio-label {
+  display: inline-block;
+  padding: 1px 8px;
+  margin: 2px;
+  background-color: #593c1a1d;
+  border: 0.5px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover state */
+.radio-label:hover {
+  background-color: #e0e0e0;
+}
+
+/* Checked state */
+input[type="radio"]:checked + .radio-label {
+  background-color: #593C1A;
+  color: white;
+  border-color: #593C1A;
+}
+
+
+.radio-label {
+  margin-right: 30px;
+} 
+
+label[for="cap-shape"] {
+  color: #593C1A; 
+  font-weight: 900;
+  font-size: 1.5vw;
+}
+
+label[for="cap-color"] {
+  color: #593C1A; 
+  font-weight: 900;
+  font-size: 1.5vw;
+}
+
+label[for="cap-surface"] {
+  color: #593C1A; 
+  font-weight: 900;
+  font-size: 1.5vw;
+}
+
+label[for="stalk-shape"] {
+  color: #593C1A; 
+  font-weight: 900;
+  font-size: 1.5vw;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#mute-button {
+  background-color: rgba(44, 39, 32, 0.48);
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 40px;
+  left: calc(50% - 50px);
+  transform: translateX(-50%);
+  z-index: 1000;
+  color: #F1EBEB;
+}
+
+#mute-button.playing {
+  background-color: rgba(89, 60, 26, 0.8);
+}
+
+#mute-button:hover {
+  background-color: rgba(89, 60, 26, 0.4);
+  transform: translateX(-50%) scale(1.1);
+}
+
+#mute-button:active {
+  opacity: 0.8;
+  transform: translateX(-50%) scale(0.95);
+}
+
+#mute-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.audio-hint {
+  position: absolute;
+  top: 50px;
+  left: calc(49% - 0px);
+  font-size: 1rem;
+  opacity: 0.8;
+  color: #593C1A;
+  text-align: left;
+  z-index: 1000;
+  font-family: var(--font2);
+}
+
+@media screen and (max-width: 768px) {
+
+  #fungi-title {
+    font-size: 1.6rem;
+    top: 8rem;
+  }
+
+  #forager-f {
+    font-size: 8rem;
+    margin-top: 5rem;
+    margin-left: -3rem;
+  }
+
+  #forager-orager {
+    font-size: 5rem;
+  }
+
+  
+  
+  .caution-text {
+    font-size: 16px;
+    max-width: 90vw;
+    line-height: 1.6;
+  }
+
+  #caution-title {
+    font-size: 24px;
+  }
+
+
+  #probability-form {
+    font-size: 16px;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .radio-label {
+    font-size: 12px;
+    padding: 6px 10px;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  #probability {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20rem;
+  }
+
+  #calculate-btn {
+    margin: 2rem auto; 
+    display: block; 
+    font-size: 1rem;
+  }
+
+  #result-div {
+    margin-left: -0.4rem;
+    margin-top: -16rem;
+    width: 90%;
+    max-width: none;
+    max-height: none;
+  }
+
+  #result-div p {
+    padding-top: 10rem;
+  }
+
+  #probability-result {
+    font-size: 10vw;
+  }
+
+  #visualization-select {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  #visualization-select select {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  #mushroom-edibility-title,
+  #whole-dataset-title {
+    font-size: 3rem;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  #forager-f {
+    font-size: 3rem;
+  }
+
+  #forager-orager {
+    font-size: 2rem;
+  }
+
+  label[for="cap-shape"],
+  label[for="cap-color"],
+  label[for="cap-surface"],
+  label[for="stalk-shape"] {
+    font-size: 18px;
+  }
+
+  #calculate-btn {
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  #visualization-instructions {
+    font-size: 16px;
+    text-align: center;
+    padding: 0 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

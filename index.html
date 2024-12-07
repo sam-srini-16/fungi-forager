@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fungi Forager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <audio id="background-music" loop>
+        <source src="forestsounds.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</head>
+
+<body role="main">
+    <div id="spacer" aria-hidden="true"></div>
+    <div id="landing" role="banner">
+        <button id="mute-button" aria-label="Toggle music">
+            <img src="mute.png" alt="Speaker icon" width="24" height="24">
+        </button>
+        <span class="audio-hint">tap for audio</span>
+        <div id="bg_forest" aria-hidden="true"></div>
+        <div id="content" role="presentation">
+            <h2 id="fungi-title" aria-label="Fungi">FUNGI</h2>
+            <div id="forager-container" role="presentation">
+                <h3 id="forager-f" aria-label="Forager">f</h3>
+                <h4 id="forager-orager" aria-hidden="true">orager</h4>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <section id="caution" role="complementary" aria-labelledby="caution-title">
+            <div class="caution-container">
+                <p id="caution-title" role="heading" aria-level="2">Caution</p>
+                <p class="caution-text" id="caution-text-1">
+                    No single visual characteristic can reliably determine a mushroom's edibility. Many edible mushrooms have toxic look-alikes, and misidentification can lead to severe poisoning or death.
+                </p><br>
+                <p class="caution-text" id="caution-text-2">
+                    Consult multiple identification features and, when in doubt, seek expertise from experienced foragers or mycologists.
+                </p>
+                <div class="scattered-mushrooms">
+                    <div class="mushroom-image" id="mushroom1" aria-hidden="true"> <img src="mushroom1.png" tabindex="-1" alt="decoration" ></div>
+                    <div class="mushroom-image" id="mushroom2" aria-hidden="true"> <img src="mushroom2.png" tabindex="-1" alt="decoration"></div>
+                    <div class="mushroom-image" id="mushroom3" aria-hidden="true"> <img src="mushroom3.png" tabindex="-1" alt="decoration"></div>
+                    <div class="mushroom-image" id="mushroom4" aria-hidden="true"> <img src="mushroom4.png" tabindex="-1" alt="decoration"></div>
+                    <div class="mushroom-image" id="mushroom5" aria-hidden="true"> <img src="mushroom5.png" tabindex="-1" alt="decoration"></div>
+                    <div class="mushroom-image" id="mushroom6" aria-hidden="true"> <img src="mushroom6.png" tabindex="-1" alt="decoration"></div>
+                </div>
+            </div>
+        </section>
+        <section id="edibility-calculator" role="region" aria-labelledby="mushroom-edibility-title">
+            <div id="edibility-calculator-content" role="presentation">
+                <p id="mushroom-edibility-title" class="animate-text" role="heading" aria-level="2"> Edibility Calculator</p>
+                <p id="scroll-down-text" aria-hidden="true">Scroll down</p>
+                <div class="scroll-arrow" aria-hidden="true">&#8595;</div>
+            </div>
+        </section>
+        <section id="probability" role="form" aria-labelledby="form-instructions">
+            <form id="probability-form" role="form" aria-label="Mushroom Feature Selection Form">
+                <div class="button-group-cap-shape" role="group" aria-labelledby="cap-shape-label">
+                    <div id="form-instructions" role="heading" aria-level="2">
+                        <p>Select the features of your mushroom:</p>
+                    </div>
+                    <label id="cap-shape-label" for="cap-shape">Cap Shape</label>
+                    <div class="button-group" role="group" aria-label="Cap Shape">
+                        <input type="radio" id="cap-shape-b" name="cap-shape" value="b" class="btn-check">
+                        <label class="btn radio-label" for="cap-shape-b">Bell</label>
+                        <input type="radio" id="cap-shape-x" name="cap-shape" value="x" class="btn-check">
+                        <label class="btn radio-label" for="cap-shape-x">Convex</label>
+                        <input type="radio" id="cap-shape-f" name="cap-shape" value="f" class="btn-check">
+                        <label class="btn radio-label" for="cap-shape-f">Flat</label>
+                        <input type="radio" id="cap-shape-k" name="cap-shape" value="k" class="btn-check">
+                        <label class="btn radio-label" for="cap-shape-k">Knobbed</label>
+                    </div>
+                </div>
+                <br>
+                <div class="button-group" role="group" aria-labelledby="cap-color-label">
+                    <label id="cap-color-label" for="cap-color">Cap Color</label>
+                    <div class="button-group" role="group" aria-label="Cap Color">
+                        <input type="radio" id="cap-color-n" name="cap-color" value="n" class="btn-check">
+                        <label class="btn radio-label" for="cap-color-n">Brown</label>
+                        <input type="radio" id="cap-color-g" name="cap-color" value="g" class="btn-check">
+                        <label class="btn radio-label" for="cap-color-g">Gray</label>
+                        <input type="radio" id="cap-color-e" name="cap-color" value="e" class="btn-check">
+                        <label class="btn radio-label" for="cap-color-e">Red</label>
+                        <input type="radio" id="cap-color-w" name="cap-color" value="w" class="btn-check">
+                        <label class="btn radio-label" for="cap-color-w">White</label>
+                        <input type="radio" id="cap-color-y" name="cap-color" value="y" class="btn-check">
+                        <label class="btn radio-label" for="cap-color-y">Yellow</label>
+                    </div>
+                </div>
+
+                <br>
+                <div class="button-group" role="group" aria-labelledby="cap-surface-label">
+                    <label id="cap-surface-label" for="cap-surface">Cap Surface</label>
+                    <div class="button-group" role="group" aria-label="Cap Surface">
+                        <input type="radio" id="cap-surface-f" name="cap-surface" value="f" class="btn-check">
+                        <label class="btn radio-label" for="cap-surface-f">Fibrous</label>
+                        <input type="radio" id="cap-surface-y" name="cap-surface" value="y" class="btn-check">
+                        <label class="btn radio-label" for="cap-surface-y">Scaly</label>
+                        <input type="radio" id="cap-surface-s" name="cap-surface" value="s" class="btn-check">
+                        <label class="btn radio-label" for="cap-surface-s">Smooth</label>
+                    </div>
+                </div>
+                <br>
+                <div class="button-group" role="group" aria-labelledby="stalk-shape-label">
+                    <label id="stalk-shape-label" for="stalk-shape">Stalk Shape</label>
+                    <div class="button-group" role="group" aria-label="Stalk Shape">
+                        <input type="radio" id="stalk-shape-t" name="stalk-shape" value="t" class="btn-check">
+                        <label class="btn radio-label" for="stalk-shape-t">Tapering</label>
+                        <input type="radio" id="stalk-shape-e" name="stalk-shape" value="e" class="btn-check">
+                        <label class="btn radio-label" for="stalk-shape-e">Enlarging</label>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" id="calculate-btn" aria-label="Calculate Probability">Calculate Probability</button>
+            </form>
+            <div id="result-div" role="alert" aria-live="polite">
+                <p hidden aria-hidden="true">Your probability is ready!</p>
+                <p hidden>The probability of your mushroom being edible is:</p>
+                <p hidden id="probability-result" aria-label="Edibility probability result"></p>
+            </div>
+        </section>
+        <section id="whole-dataset" role="region" aria-labelledby="whole-dataset-title">
+            <div id="whole-dataset-content" role="presentation">
+                <p id="whole-dataset-title" class="animate-text" role="heading" aria-level="2"> Data Visualization</p>
+                <p id="scroll-down-text-1" aria-hidden="true">Scroll down</p>
+                <div class="scroll-arrow-1" aria-hidden="true">&#8595;</div>
+            </div>
+        </section>
+        <section id="visualization-section" role="region" aria-labelledby="visualization-instructions">
+            <p id="visualization-instructions" role="heading" aria-level="2">Select the properties to visualize:</p>
+            <div id="visualization-select" role="form">
+                <label id="prop1-label" for="visualition-property-1">Property 1:</label>
+                <select name="visualition-property-1" id="visualition-property-1" aria-labelledby="prop1-label">
+                </select>
+                <label id="prop2-label" for="visualition-property-2">Property 2:</label>
+                <select name="visualition-property-2" id="visualition-property-2" aria-labelledby="prop2-label">
+                </select>
+            </div>
+            <div id="visualization" class="visualization-container" role="img" aria-label="Data visualization chart"></div>
+        </section>
+        <section id="spacer-2" role="presentation" aria-hidden="true">
+            <a href="https://www.keepforaging.com" title="keep foraging">keepforaging.com</a>
+            <img src="mushroomfooter1.png" alt="decoration" tabindex="-1" class="object" data-value="-2">
+            <img src="mushroomfooter2.png" alt="decoration" tabindex="-1" class="object" data-value="6">
+            <img src="mushroomfooter3.png" alt="decoration" tabindex="-1" class="object" data-value="4">
+            <img src="mushroomfooter4.png" alt="decoration" tabindex="-1" class="object" data-value="-6">
+            <img src="mushroomfooter5.png" alt="decoration" tabindex="-1" class="object" data-value="8"> 
+            <img src="mushroomfooter6.png" alt="decoration" tabindex="-1" class="object" data-value="-4">
+            <img src="mushroomfooter7.png" alt="decoration" tabindex="-1" class="object" data-value="5">
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.17/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
